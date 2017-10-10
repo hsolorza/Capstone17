@@ -7,4 +7,4 @@ Capstone Members:
   
   shariffn - Nabeel Shariff
   
-  edwardrh - Rhea Edwards
+  edwardrh - Rhea Mae Edwards
