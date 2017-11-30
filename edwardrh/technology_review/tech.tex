@@ -5,10 +5,14 @@
 \usepackage{geometry}
 \usepackage{tocloft}
 \usepackage{color}
+\usepackage{array}
+\usepackage{dingbat}
 
 \geometry{margin=0.75 in}
 
 \setlength{\parskip}{1em}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 
@@ -42,6 +46,8 @@ The purpose of this document is to represent further research on different aspec
 
 \noindent
 There are many tools that our team will have to use in order to fulfill all of the requirements for our senior capstone generative design virtual reality program project. A few of the tools that we will have to implement are a headset, a programming language to write in, and the possibility of including some kind of other software that can be used with our finalize virtual reality program in order to intensify such a virtual user experience. 
+\\ ~ \\ \noindent
+The generative design virtual reality program our team will be creating involves the construction of simple 3D structures initiated by the user and further development by the software program. Such a program involves the user placing simple 3D object in some environment, and then setting constraints for the program to then build some structure by using the simple 3D object. These tools of a headset, programming language, and connective software, will have to satisfy such a overall functionality and purpose. 
 \\ ~ \\
 The options that we have chosen to research for headsets are the following:
 \begin{enumerate}
@@ -78,9 +84,11 @@ In order for our virtual reality program to be useful and actually be implemente
 
 \subsection{Criteria}
 
-\noindent
-Our chosen headset will need to be able to run out virtual reality program, and not necessarily for example augmented reality. Also, a headset that will have particular specifications that will closely relate our generative design concept of our program, will be an even better option for us to choose to use.
+% \noindent
+% Our chosen headset will need to be able to run out virtual reality program, and not necessarily for example augmented reality. Also, a headset that will have particular specifications that will closely relate our generative design concept of our program, will be an even better option for us to choose to use.
 
+\noindent
+Headsets are wore by individual users, allowing them to view computation altered reality with or through a screen, such as virtual and augmented reality. The price of a headset can greatly vary from just tens of dollars to a couple thousands of dollar depending on the complexity and usability of the device. Every headset has its own set of a variety of uses, where some headsets can be more relevant for some purposes and software program than others.
 
 \subsection{Potential Choices}
 \subsubsection{HTC Vive}
@@ -108,23 +116,51 @@ Also, the game engines Unity and Unreal Engine are supported by the Oculus Rift.
 \noindent
 The PlayStation VR is a fairly new headset which has not been out on the market for barely even a year. The PlayStation VR is highly compatible with game consoles, begin a true console-based user experience. This headset also provides "HDR (high dynamic range) - compatible TVs" meaning its support  with HDR - compatible games. Also for a consumer's perspective on the headset, the price one pays for the device is the best value provide for how much it costs, which is high consumer's benefit. [3]
 
+\newpage
+
 \subsection{Discussion}
 % Use a table here
 
-\iffalse
-\noindent\leavevmode\rlap{\textbf{0,0}}\hfill{\textbf{0,1}}\hfill\llap{\textbf{0,2}}\par
+\begin{center}
+\begin{tabular}{ | P{2.5cm} | P{3cm} | P{4.5cm} | P{1.75cm} |} 
+ 	\hline
+ 	 & Virtual Reality Capability & Abundant Available Software Resources for New Users & "Large" Play Area \\ 
+ 	\hline 		
+ 	HTC Vive & \checkmark & \checkmark & \checkmark \\ 
+ 	\hline
+ 	Oculus Rift & \checkmark & & \checkmark \\ 
+ 	\hline
+ 	PlayStation VR & \checkmark & & \\ 
+ 	\hline
+\end{tabular}
+\end{center}
 
-\noindent\leavevmode\rlap{\textbf{1,0}}\hfill{\textbf{1,1}}\hfill\llap{\textbf{1,2}}\par
-
-\noindent\leavevmode\rlap{\textbf{2,0}}\hfill{\textbf{2,1}}\hfill\llap{\textbf{2,2}}\par
-\fi
+\begin{center}
+Comparison of Headset Technology Options
+\end{center}
 
 \subsection{Conclusion}
 % "We chose Option X because..."
 % Can include a simplified table
 
+\begin{center}
+\begin{tabular}{ | P{2.5cm} | P{3cm} | P{4.5cm} | P{1.75cm} |} 
+ 	\hline
+ 	 & Virtual Reality Capability & Abundant Available Software Resources for New Users & "Large" Play Area \\ 
+ 	\hline 		
+ 	HTC Vive & \checkmark & \checkmark & \checkmark \\ 
+ 	\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+HTC Vive Headset Choice
+\end{center}
+
 \noindent
 We chose the HTC Vive headset setup because its play area specifics and available resources we have through the internet and personal user experiences in using the device. With our virtual reality program in relation with generative design, using the HTC Vive provides a great amount of physical space for a user to move and design their elements within the program, and hardware specifics that allow a user to get a maximum virtual reality experience.
+
+\newpage
 
 %----------------- TECHNOLOGY 2: PROGRAMMING LANUAGES -----------------%
 %\noindent\rule{17.8cm}{0.4pt}
@@ -136,8 +172,11 @@ Before writing any code, we need to figure out what programming language we will
 
 \subsection{Criteria}
 
+% \noindent
+% Implementing a programming language that has been studied to be ideal for writing virtual reality programs in would be our team's main requirement in choosing a programming language. Another idea that will play in which language we choose, is that the programming language is compatible with the game engine and with the platform we plan to use for our project also. A language that has been found by other developers to be the one they preferred the most with also be another positive for us, along with the idea that such a language would be an ideal language for us, as new virtual reality programmers, to write in. A programming language that is simple enough for us to pick up and learn, with many available resources for us to use would be exceptional.
+
 \noindent
-Implementing a programming language that has been studied to be ideal for writing virtual reality programs in would be our team's main requirement in choosing a programming language. Another idea that will play in which language we choose, is that the programming language is compatible with the game engine and with the platform we plan to use for our project also. A language that has been found by other developers to be the one they preferred the most with also be another positive for us, along with the idea that such a language would be an ideal language for us, as new virtual reality programmers, to write in. A programming language that is simple enough for us to pick up and learn, with many available resources for us to use would be exceptional.
+Individually, programming languages were made with there in own purpose with it comes to coding. There are programming languages that are more appropriate to write in when it comes to coding for a virtual reality program than others. Each language can also provide its own set of unique functionality. Also, when it comes to what a developer is programming, there are more sources out there that can help with such programming problems depending on the language one uses.
 
 \subsection{Potential Choices}
 \subsubsection{C\#}
@@ -165,23 +204,51 @@ A downside of coding in C++, is its beginner friendliness. C++ is a lower level 
 \noindent
 According to Codementor, "this general-purpose language [of Java] was designed to be easier to use than C++." Companies have used Java to develop desktop apps and website backend systems. Being more related with virtual reality programs, Java is highly used in developing Android apps. Java is beginner friendly and can be fairly easy to use to optimize performance within a written program, but can be a frustrating the use from the start, due to its great lengths in code when writing. [6]
 
+\newpage
+
 \subsection{Discussion}
 % Use a table here
 
-\iffalse
-\noindent\leavevmode\rlap{\textbf{0,0}}\hfill{\textbf{0,1}}\hfill\llap{\textbf{0,2}}\par
+\begin{center}
+\begin{tabular}{ | P{2.5cm} | P{3.5cm} | P{2.75cm} | P{3cm} | } 
+ 	\hline
+ 	 & Able to Use for Virtual Reality Programs & Simple to Learn for Beginners & Many Available Resources \\ 
+ 	\hline 		
+ 	C\# & \checkmark & \checkmark & \checkmark \\ 
+ 	\hline
+ 	C/C++ & \checkmark & & \checkmark \\ 
+ 	\hline
+ 	Java & \checkmark & & \checkmark \\ 
+ 	\hline
+\end{tabular}
+\end{center}
 
-\noindent\leavevmode\rlap{\textbf{1,0}}\hfill{\textbf{1,1}}\hfill\llap{\textbf{1,2}}\par
-
-\noindent\leavevmode\rlap{\textbf{2,0}}\hfill{\textbf{2,1}}\hfill\llap{\textbf{2,2}}\par
-\fi
+\begin{center}
+Comparison of Programming Language Technology Options
+\end{center}
 
 \subsection{Conclusion}
 % "We chose Option X because..."
 % Can include a simplified table
 
+\begin{center}
+\begin{tabular}{ | P{2.5cm} | P{3.5cm} | P{2.75cm} | P{3cm} | } 
+ 	\hline
+ 	 & Able to Use for Virtual Reality Programs & Simple to Learn for Beginners & Many Available Resources \\ 
+ 	\hline 		
+ 	C\# & \checkmark & \checkmark & \checkmark \\ 
+ 	\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+C\# Programming Language Choice
+\end{center}
+
 \noindent
 We chose to use C\# as our main programming language because mainly with our initial chosen game engine, Unity, for our group to code in, C\# is the more widely use language to code in. Many of the tutorials and examples when coding in Unity are in C\# , along with C\# begin the most often recommended programming language when creating games through the Unity game engine. [4]
+
+\newpage
 
 %----------------- TECHNOLOGY 3: CONNECTIVITY SOFTWARE -----------------%
 %\noindent\rule{17.8cm}{0.4pt}
@@ -189,12 +256,15 @@ We chose to use C\# as our main programming language because mainly with our ini
 \subsection{Overview}
 
 \noindent
-Suggested by our client, was a handful of separate software and development tools that we as a team, can think of using with our program once we get our basic implementation working for our main project. The idea behind these additions, is to further our basic idea of a program and provide a more diverse user experience with our generative design virtual program. There are hopes also that adding a single or multiple additional software and tools, the these additions will provide a more realistic experience for the program's users overall.
+Suggested by our client, was a handful of separate software and development tools that we as a team, can think of using with our program once we get our basic implementation working for our main project. The idea behind these additions, is to further our basic idea of a program and provide a more diverse user experience with our generative design virtual program. There are hopes also that adding a single or multiple additional software and tools will provide a more realistic experience for the program's users overall.
 
 \subsection{Criteria}
 
+% \noindent
+% Most importantly, a software or tool that is compatible with our chosen headset and finalized written program will be a requirement in choosing a certain addition. Also, a software or tool that will actually enhance our generative designing experience the best in some way for our users, would be a priority addition for our project's implementation. 
+
 \noindent
-Most importantly, a software or tool that is compatible with our chosen headset and finalized written program will be a requirement in choosing a certain addition. Also, a software or tool that will actually enhance our generative designing experience the best in some way for our users, would be a priority addition for our project's implementation.  
+There are only certain types of software that will be able to connect with a virtual headset, and especially depending on the one our team decides on using. Along with the additional software's ability to integrate, the software's purpose is to enhance and benefit the main program in some way. Such enhancement can be done by the addition of useful features or accessibility and functionality of the program overall.
 
 \subsection{Potential Choices}
 \subsubsection{Dynamo}
@@ -221,17 +291,43 @@ Through the cameras of a headset and infrared light, Leap Motion can help integr
 \subsection{Discussion}
 % Use a table here
 
-\iffalse
-\noindent\leavevmode\rlap{\textbf{0,0}}\hfill{\textbf{0,1}}\hfill\llap{\textbf{0,2}}\par
+\begin{center}
+\begin{tabular}{ | P{3.5cm} | P{3cm} | P{2.5cm} | P{2.5cm} | } 
+ 	\hline
+ 	 & Capable with the HTC Vive & Movement Relevant & Visually Relevant \\ 
+ 	\hline
+ 	Dynamo & \checkmark & & \checkmark \\ 
+ 	\hline
+ 	Grasshopper - Iris VR & \checkmark & & \checkmark \\ 
+ 	\hline
+ 	Leap Motion & \checkmark & \checkmark & \\ 
+ 	\hline
+\end{tabular}
+\end{center}
 
-\noindent\leavevmode\rlap{\textbf{1,0}}\hfill{\textbf{1,1}}\hfill\llap{\textbf{1,2}}\par
+\begin{center}
+Comparison of Connective Software Technology Options
+\end{center}
 
-\noindent\leavevmode\rlap{\textbf{2,0}}\hfill{\textbf{2,1}}\hfill\llap{\textbf{2,2}}\par
-\fi
+\newpage
 
 \subsection{Conclusion}
 % "We chose Option X because..."
 % Can include a simplified table
+
+\begin{center}
+\begin{tabular}{ | P{3.5cm} | P{3cm} | P{2.5cm} | P{2.5cm} | } 
+ 	\hline
+ 	 & Capable with the HTC Vive & Movement Relevant & Visually Relevant \\ 
+ 	\hline 		
+ 	Leap Motion & \checkmark & \checkmark & \\ 
+ 	\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+Leap Motion Connective Software Choice
+\end{center}
 
 \noindent
 We chose Leap Motion as our initial main software to connect our main virtual program to because it allows its users to use their bare hands when maneuvering through a virtual reality program. Allowing this type of availability for our user with generative designing will be a very convenient addition, and allow our users to experience a more realistic building of a virtual physical structural design with their own hands in virtual reality.
