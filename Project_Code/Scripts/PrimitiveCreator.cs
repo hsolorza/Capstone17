@@ -6,6 +6,8 @@ public class PrimitiveCreator : MonoBehaviour
 
 {
 
+    #region set up initialization
+    // initialize the controller, first primitive (sphere), and the tracked object
     private SteamVR_TrackedController _controller;
 
     private PrimitiveType _currentPrimitiveType = PrimitiveType.Sphere;
@@ -62,36 +64,6 @@ public class PrimitiveCreator : MonoBehaviour
 
         _controller.PadClicked += HandlePadClicked;
 
-        // 1
-        if (Controller.GetAxis() != Vector2.zero)
-        {
-            Debug.Log(gameObject.name + Controller.GetAxis());
-        }
-
-        // 2
-        if (Controller.GetHairTriggerDown())
-        {
-            Debug.Log(gameObject.name + " Trigger Press");
-        }
-
-        // 3
-        if (Controller.GetHairTriggerUp())
-        {
-            Debug.Log(gameObject.name + " Trigger Release");
-        }
-
-        // 4
-        if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
-        {
-            Debug.Log(gameObject.name + " Grip Press");
-        }
-
-        // 5
-        if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
-        {
-            Debug.Log(gameObject.name + " Grip Release");
-        }
-
     }
 
 
@@ -111,6 +83,9 @@ public class PrimitiveCreator : MonoBehaviour
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
+    #endregion
+
+
     #region Primitive Spawning
 
     private void HandleTriggerClicked(object sender, ClickedEventArgs e)
@@ -127,7 +102,7 @@ public class PrimitiveCreator : MonoBehaviour
 
     {
 
-        var spawnedPrimitive = GameObject.CreatePrimitive(_currentPrimitiveType);
+        var spawnedPrimitive = GameObject.CreatePrimitive(_currentPrimitiveType).AddComponent<Rigidbody>();
 
         spawnedPrimitive.transform.position = transform.position;
 
