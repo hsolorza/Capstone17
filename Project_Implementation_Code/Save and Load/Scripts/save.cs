@@ -2,16 +2,20 @@
  Created By: Rhea Mae Edwards
  Date: 3/16/2018
  Program Description:
-
+ * Save and load implementation for project
  ***********************************************/
+
+ // NOTE: All of the Debug.Log() statements print out twice
+ // I am unsure why...
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.IO;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
-using System.IO;
 
 public class save : MonoBehaviour {
 
@@ -30,6 +34,10 @@ public class save : MonoBehaviour {
         string sc1, sc2, sc3;
         string r1, r2, r3;
         string type;
+
+        string[] object_list;
+        //string[] character_list;
+        ArrayList character_list = new ArrayList();
 
         // Looops through all of the GameObjects in the list of blocks
         // Finds and Stores each GameObject's position, scaling, rotation, and type
@@ -51,22 +59,61 @@ public class save : MonoBehaviour {
             s = string.Concat(s, type, ")\n");
         }
 
-        // Prints string of GameObjects
-        Debug.Log(s);
+        // Prints string of GameObjects 
+        //Debug.Log(s); 
 
         // Writes string in a stated file
         System.IO.File.WriteAllText(path, s);
 
-        // Prints out contents as a string in the file the string was store into
+        // Reads the string in the stated file
+        // Store string into textIn variable
         textIn = System.IO.File.ReadAllText(path);
-        Debug.Log(textIn);
+
+        // Prints out contents as a string in the file the string was store into
+        //Debug.Log(textIn); 
+
+        // Tokenizes GameObjects described in the string from the file by newline (\n)
+        // Adds objects in a string array, object_list
+        object_list = textIn.Split('\n');
+        //Debug.Log(object_list);
+
+        foreach (string gameobj in object_list) {
+            string obj;
+
+            // Ignoring the first and last character on each line (the opening and closing parantheses (( and )))
+            // Puts a GameObject in a variable called obj for useage
+            obj = gameobj.Replace("(", "");
+            obj = obj.Replace(")", "");
+            //Debug.Log(obj);
+
+            // Tokenize each component in each of the GameObjects by comma (,)
+            // Takes a GameObject's componenets and stores them in a string array called item_list
+            string[] item_list;
+            item_list = obj.Split(',');
+            //Debug.Log(item_list);
+
+            // Inputs each component in an ongoing Arraylist called character_list
+            foreach (string item in item_list) {
+                character_list.Add(item);
+                //Debug.Log(item);
+            }
+        }
+
+        // Create/Spawn a GameObject(s) based of the componenets in the Arraylist (character_list)
+
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
+
+// Tested Code:
+
+//objects = textIn.Split(new string[] {"\n"}, StringSplitOptions.None);
+//Debug.Log(objects);
 
 /**************** End Goal ************************
 Data Structure:
