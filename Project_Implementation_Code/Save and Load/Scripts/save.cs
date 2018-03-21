@@ -1,6 +1,6 @@
 ﻿/***********************************************
  Created By: Rhea Mae Edwards
- Date: 3/16/2018
+ Date: 3/21/2018
  Program Description:
  * Save and load implementation for project
  ***********************************************/
@@ -28,6 +28,8 @@ public class save : MonoBehaviour {
     // Creates list of GameObjects to spawn back into a game scene
     public List<GameObject> spawn_list;
 
+    //public GameObject loadedList;
+
     // Use this for initialization
     void Start() {
 
@@ -52,24 +54,31 @@ public class save : MonoBehaviour {
         float sca1, sca2, sca3;
         float ro1, ro2, ro3;
 
+        //loadedList = GameObject.Find("[Parent GameObject/Container]");
+
         // Looops through all of the GameObjects in the list of blocks
         // Finds and Stores each GameObject's position, scaling, rotation, and type
+        // Ignores the saving of the parent game object, only considers the children being created
         foreach (Transform myChild in blockList.GetComponentsInChildren<Transform>()) {
-            s = string.Concat(s, "(");
-            p1 = (myChild.position.x).ToString();
-            p2 = (myChild.position.y).ToString();
-            p3 = (myChild.position.z).ToString();
-            s = string.Concat(s, p1, ",", p2, ",", p3, ",");
-            sc1 = (myChild.localScale.x).ToString();
-            sc2 = (myChild.localScale.y).ToString();
-            sc3 = (myChild.localScale.z).ToString();
-            s = string.Concat(s, sc1, ",", sc2, ",", sc3, ",");
-            r1 = (myChild.eulerAngles.x).ToString();
-            r2 = (myChild.eulerAngles.y).ToString();
-            r3 = (myChild.eulerAngles.z).ToString();
-            s = string.Concat(s, r1, ",", r2, ",", r3, ",");
-            type = "T";
-            s = string.Concat(s, type, ")\n");
+            //Debug.Log(myChild.name);
+            if (myChild.name != blockList.name)
+            {
+                s = string.Concat(s, "(");
+                p1 = (myChild.position.x).ToString();
+                p2 = (myChild.position.y).ToString();
+                p3 = (myChild.position.z).ToString();
+                s = string.Concat(s, p1, ",", p2, ",", p3, ",");
+                sc1 = (myChild.localScale.x).ToString();
+                sc2 = (myChild.localScale.y).ToString();
+                sc3 = (myChild.localScale.z).ToString();
+                s = string.Concat(s, sc1, ",", sc2, ",", sc3, ",");
+                r1 = (myChild.eulerAngles.x).ToString();
+                r2 = (myChild.eulerAngles.y).ToString();
+                r3 = (myChild.eulerAngles.z).ToString();
+                s = string.Concat(s, r1, ",", r2, ",", r3, ",");
+                type = "T";
+                s = string.Concat(s, type, ")\n");
+            }
         }
 
         // Prints string of GameObjects 
@@ -136,8 +145,7 @@ public class save : MonoBehaviour {
             // i += 9; at the end every time an object is spawned
 
             string tempType = Convert.ToString(character_list[i + 9]);
-            Debug.Log(tempType);
-
+            
             if (tempType == "T") {
                 po1 = Convert.ToSingle(character_list[i]);
                 po2 = Convert.ToSingle(character_list[i + 1]);
@@ -171,6 +179,8 @@ public class save : MonoBehaviour {
                 i += 9;
             }
         }
+
+        //spawn_list.transform.SetParent(loadedList);
 
     }
 
