@@ -8,7 +8,7 @@ public class HyperbolaT : MonoBehaviour {
     // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
 
     // Number of times object in placed on Hyperbola
-    private int segments = 60;
+    private int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables
@@ -51,6 +51,7 @@ public class HyperbolaT : MonoBehaviour {
         float z = 0f;
         // Starting angle for the object
         float angle = 20f;
+        float t = 0;
 
         // Loop going through Hyperbola based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
@@ -59,8 +60,16 @@ public class HyperbolaT : MonoBehaviour {
             // x = a*sec(angle) + xoffset = a*(1/cos(angle)) + xoffset
             // y = b*tan(angle) + yoffset
             // NOTE: Might have to be flipped like for the CircleT code, still unsure exactly why
-            x = xradius * (1 / Mathf.Cos(Mathf.Deg2Rad * angle)) * +xoffset;
-            y = yradius * Mathf.Tan(Mathf.Deg2Rad * angle) + yoffset;
+            //x = xradius * (1 / Mathf.Cos(Mathf.Deg2Rad * angle)) * + xoffset;
+            //y = yradius * Mathf.Tan(Mathf.Deg2Rad * angle) + yoffset;
+            
+            // OR...
+            // x = acosh(t), where cosh(t) = (1+(e)^-2t) / (2*(e)^(-t))
+            // y = bsinh(t), where sinh(t) = (1-(e)^-2t) / (2*(e)^(-t))
+            x = xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+
+            // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
 
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
@@ -80,10 +89,116 @@ public class HyperbolaT : MonoBehaviour {
             float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
 
             // Rotating object based off calculated angle from earlier
-            tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing cube..?
             cube.Insert(i, tempCube);
+
+
+            /*********************************************************************************/
+
+            y = y * (-1);
+
+            // Setting position calculated
+            line.SetPosition(i, new Vector3(x, y, z));
+            // Printing out x position of object
+            Debug.Log(line.GetPosition(i).x);
+
+            // Creating a cube as the GameObject being used
+            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            /*tempCube.AddComponent<Rigidbody>();*/
+
+            // Placing object at calculated position
+            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+
+            // Calculating angle of the object of the Hyperbola
+            // angle = acos((x-xoffset)/(m))
+            // m = -(x-xoffset) / (y-yoffset)
+            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+
+            // Rotating object based off calculated angle from earlier
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+
+            // Placing cube..?
+            cube.Insert(i, tempCube);
+
+            y = y * (-1);
+
+            /*********************************************************************************/
+            /*********************************************************************************/
+
+            // Calculating x and y of an object based off angle and radius of the Hyperbola
+            // x = a*sec(angle) + xoffset = a*(1/cos(angle)) + xoffset
+            // y = b*tan(angle) + yoffset
+            // NOTE: Might have to be flipped like for the CircleT code, still unsure exactly why
+            //x = xradius * (1 / Mathf.Cos(Mathf.Deg2Rad * angle)) * + xoffset;
+            //y = yradius * Mathf.Tan(Mathf.Deg2Rad * angle) + yoffset;
+
+            // OR...
+            // x = acosh(t), where cosh(t) = (1+(e)^-2t) / (2*(e)^(-t))
+            // y = bsinh(t), where sinh(t) = (1-(e)^-2t) / (2*(e)^(-t))
+            x = (-1) * xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+
+            // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
+
+            // Setting position calculated
+            line.SetPosition(i, new Vector3(x, y, z));
+            // Printing out x position of object
+            Debug.Log(line.GetPosition(i).x);
+
+            // Creating a cube as the GameObject being used
+            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            /*tempCube.AddComponent<Rigidbody>();*/
+
+            // Placing object at calculated position
+            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+
+            // Calculating angle of the object of the Hyperbola
+            // angle = acos((x-xoffset)/(m))
+            // m = -(x-xoffset) / (y-yoffset)
+            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+
+            // Rotating object based off calculated angle from earlier
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+
+            // Placing cube..?
+            cube.Insert(i, tempCube);
+
+
+            /*********************************************************************************/
+
+            y = y * (-1);
+
+            // Setting position calculated
+            line.SetPosition(i, new Vector3(x, y, z));
+            // Printing out x position of object
+            Debug.Log(line.GetPosition(i).x);
+
+            // Creating a cube as the GameObject being used
+            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            /*tempCube.AddComponent<Rigidbody>();*/
+
+            // Placing object at calculated position
+            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+
+            // Calculating angle of the object of the Hyperbola
+            // angle = acos((x-xoffset)/(m))
+            // m = -(x-xoffset) / (y-yoffset)
+            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+
+            // Rotating object based off calculated angle from earlier
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+
+            // Placing cube..?
+            cube.Insert(i, tempCube);
+
+            y = y * (-1);
+
+            /*********************************************************************************/
+
+
+            t = (3 * (t + 1)) / 4;
 
             // Calculating next angle based off an additional segment calculated from earlier
             angle += (360f / segments);

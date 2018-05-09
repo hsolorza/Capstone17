@@ -56,7 +56,7 @@ public class ParabolaT : MonoBehaviour {
         // Loop going through Parabola based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = x + objectWidth;
+            x = x + (objectWidth/2);
 
             // Calculating x and y of an object based off angle and radius of the Parabola
             // x = a*sin(angle) + xoffset
@@ -93,24 +93,11 @@ public class ParabolaT : MonoBehaviour {
             // Placing cube..?
             cube.Insert(i, tempCube);
 
-            // Calculating next angle based off an additional segment calculated from earlier
-            angle += (360f / segments);
-        }
+            // Graphing the other side of the parabola
+            /*********************************************************************************/
 
-        x = xoffset;
-
-        // Loop going through Parabola based off number of segments calculated earlier
-        for (int i = 0; i < (segments + 1); i++)
-        {
-            x = x - objectWidth;
-
-            // Calculating x and y of an object based off angle and radius of the Parabola
-            // x = a*sin(angle) + xoffset
-            // y = a*cos(angle) + yoffset
-            // NOTE: Might have to be flipped like for the CircleT code, still unsure exactly why
-            //x = a * Mathf.Sin(Mathf.Deg2Rad * angle) * + xoffset;
-            //y = a * Mathf.Cos(Mathf.Deg2Rad * angle) + yoffset;
-
+            x = x * (-1);
+            
             // y = a(x-h)^2 + k
             y = a * (x - xoffset) * (x - xoffset) + yoffset;
 
@@ -121,7 +108,7 @@ public class ParabolaT : MonoBehaviour {
 
             // Creating a cube as the GameObject being used
             tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            /*tempCube.AddComponent<Rigidbody>();*/
+            //tempCube.AddComponent<Rigidbody>();//
 
             // Placing object at calculated position
             tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
@@ -129,7 +116,7 @@ public class ParabolaT : MonoBehaviour {
             // Calculating angle of the object of the Parabola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
             //float xAngle = Mathf.Tan((line.GetPosition(i).y - yoffset) / (line.GetPosition(i).x - xoffset)) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
             Debug.Log("Angle:" + xAngle);
 
@@ -139,9 +126,14 @@ public class ParabolaT : MonoBehaviour {
             // Placing cube..?
             cube.Insert(i, tempCube);
 
+            x = x * (-1);
+
+            /*********************************************************************************/
+
             // Calculating next angle based off an additional segment calculated from earlier
             angle += (360f / segments);
         }
+
     }
 	
 	// Update is called once per frame
