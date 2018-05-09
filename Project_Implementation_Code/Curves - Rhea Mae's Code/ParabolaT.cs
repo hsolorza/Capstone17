@@ -8,7 +8,7 @@ public class ParabolaT : MonoBehaviour {
     // y = a(x-h)^2 + k
 
     // Number of times object in placed on Parabola
-    private int segments = 10;
+    public int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables

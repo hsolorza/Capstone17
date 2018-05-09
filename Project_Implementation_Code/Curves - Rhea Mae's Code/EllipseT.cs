@@ -8,7 +8,7 @@ public class EllipseT : MonoBehaviour {
     // 1 = (((x-h)^2)/a^2) + (((y-v)^2)/b^2)
 
     // Number of times object in placed on Ellipse
-    private int segments = 60;
+    private int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables

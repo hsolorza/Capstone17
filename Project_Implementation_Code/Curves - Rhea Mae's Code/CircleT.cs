@@ -5,7 +5,7 @@ using UnityEngine;
 public class CircleT : MonoBehaviour {
 
     // Number of times object in placed on Circle
-    private int segments = 60;
+    private int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables

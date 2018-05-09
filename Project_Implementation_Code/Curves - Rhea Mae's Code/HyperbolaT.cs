@@ -8,7 +8,7 @@ public class HyperbolaT : MonoBehaviour {
     // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
 
     // Number of times object in placed on Hyperbola
-    private int segments = 10;
+    public int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables
