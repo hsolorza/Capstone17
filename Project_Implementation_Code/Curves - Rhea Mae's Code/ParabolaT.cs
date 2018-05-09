@@ -11,6 +11,7 @@ public class ParabolaT : MonoBehaviour {
     public int segments = 10;
     // Width of the Object
     public float objectWidth = 1;
+    public float objectHeight = 1;
     // User Input Variables
     public float xoffset = 5; // h or x0 of equation
     public float yoffset = 5; // v or y0 of equation
@@ -51,7 +52,7 @@ public class ParabolaT : MonoBehaviour {
         // Starting angle for the object
         float angle = 20f;
 
-        x = xoffset;
+        //x = xoffset;
 
         // Loop going through Parabola based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
@@ -65,8 +66,13 @@ public class ParabolaT : MonoBehaviour {
 
             // OR
             // y = a(x-h)^2 + k
-            x = x + (objectWidth / 2);
-            y = a * (x - xoffset) * (x - xoffset) + yoffset;
+            //x = x + (objectWidth / 2);
+            //y = a * (x - xoffset) * (x - xoffset) + yoffset;
+
+            // 2nd Method
+            // Inverse: x = sqrt((y-k) / a) + h
+            y = y + objectHeight;
+            x = (Mathf.Sqrt(y - yoffset) / a) + xoffset;
 
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
@@ -96,10 +102,12 @@ public class ParabolaT : MonoBehaviour {
             // Graphing the other side of the parabola
             /*********************************************************************************/
 
-            x = x * (-1);
-            
+            //x = x * (-1);
+
             // y = a(x-h)^2 + k
-            y = a * (x - xoffset) * (x - xoffset) + yoffset;
+            //y = a * (x - xoffset) * (x - xoffset) + yoffset;
+
+            x = (-1) * (Mathf.Sqrt(y - yoffset) / a) + xoffset;
 
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
@@ -126,7 +134,7 @@ public class ParabolaT : MonoBehaviour {
             // Placing cube..?
             cube.Insert(i, tempCube);
 
-            x = x * (-1);
+            //x = x * (-1);
 
             /*********************************************************************************/
 

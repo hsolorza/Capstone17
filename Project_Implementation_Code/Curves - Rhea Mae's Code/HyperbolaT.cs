@@ -13,7 +13,7 @@ public class HyperbolaT : MonoBehaviour {
     public float objectWidth = 1;
     // User Input Variables
     public float xoffset = 5; // h of equation
-    public float yoffset = 5; // v of equation
+    public float yoffset = 5; // v or k of equation
     public float zoffset = 0;
     public float shrink = 1;
     // Asymptotes of the Hyperbola
@@ -46,8 +46,8 @@ public class HyperbolaT : MonoBehaviour {
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the Hyperbola
-        float x; // x of equation
-        float y; // y of equation
+        float x = 0f; // x of equation
+        float y = 0f; // y of equation
         float z = 0f;
         // Starting angle for the object
         float angle = 20f;
@@ -70,10 +70,14 @@ public class HyperbolaT : MonoBehaviour {
             // OR...
             // x = acosh(t), where cosh(t) = (1+(e)^-2t) / (2*(e)^(-t))
             // y = bsinh(t), where sinh(t) = (1-(e)^-2t) / (2*(e)^(-t))
-            x = xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
-            y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            //x = xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            //y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
 
-            // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
+            // OR...
+            // Solving for y in respects to x
+            // y = sqrt(((((x-h)^2) / a^2) - 1) * b^2) + k
+            x = x + objectWidth;
+            y = Mathf.Sqrt((((Mathf.Pow((x - xoffset), 2)) / Mathf.Pow(xradius, 2)) - 1) / Mathf.Pow(yradius, 2)) + yoffset;
 
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
@@ -142,10 +146,14 @@ public class HyperbolaT : MonoBehaviour {
             // OR...
             // x = acosh(t), where cosh(t) = (1+(e)^-2t) / (2*(e)^(-t))
             // y = bsinh(t), where sinh(t) = (1-(e)^-2t) / (2*(e)^(-t))
-            x = (-1) * xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
-            y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            //x = (-1) * xradius * ((1 + Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
+            //y = yradius * ((1 - Mathf.Exp((-1) * 2 * (t))) / (2 * Mathf.Exp((-1) * (t))));
 
-            // 1 = (((x-h)^2)/a^2) - (((y-k)^2)/b^2)
+            // OR...
+            // Solving for y in respects to x
+            // y = sqrt(((((x-h)^2) / a^2) - 1) * b^2) + k
+            x = (-1) * x;
+            y = Mathf.Sqrt((((Mathf.Pow((x - xoffset), 2)) / Mathf.Pow(xradius, 2)) - 1) / Mathf.Pow(yradius, 2)) + yoffset;
 
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
@@ -201,6 +209,8 @@ public class HyperbolaT : MonoBehaviour {
             y = y * (-1);
 
             /*********************************************************************************/
+
+            x = (-1) * x;
 
             t = (3 * (t + 1)) / 4;
 
