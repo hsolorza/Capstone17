@@ -56,8 +56,6 @@ public class ParabolaT : MonoBehaviour {
         // Loop going through Parabola based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = x + (objectWidth/2);
-
             // Calculating x and y of an object based off angle and radius of the Parabola
             // x = a*sin(angle) + xoffset
             // y = a*cos(angle) + yoffset
@@ -65,7 +63,9 @@ public class ParabolaT : MonoBehaviour {
             //x = a * Mathf.Sin(Mathf.Deg2Rad * angle) * + xoffset;
             //y = a * Mathf.Cos(Mathf.Deg2Rad * angle) + yoffset;
 
+            // OR
             // y = a(x-h)^2 + k
+            x = x + (objectWidth / 2);
             y = a * (x - xoffset) * (x - xoffset) + yoffset;
 
             // Setting position calculated

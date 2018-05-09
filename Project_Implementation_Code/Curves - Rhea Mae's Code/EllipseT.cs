@@ -64,7 +64,7 @@ public class EllipseT : MonoBehaviour {
         // Loop going through Ellipse based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
         {
-            // Calculating x and y of an object based off angle and radius of the Ellipse
+            // Calculating x and y of an object based off angle and radii of the Ellipse
             // x = a*cos(angle)
             // y = b*sin(angle)
             // NOTE: Might have to be flipped like for the CircleT code, still unsure exactly why
