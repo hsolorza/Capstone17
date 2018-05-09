@@ -56,13 +56,17 @@ public class HyperbolaT : MonoBehaviour {
         // Loop going through Hyperbola based off number of segments calculated earlier
         for (int i = 0; i < (segments + 1); i++)
         {
+            /*********************************************************************************/
+            // Calculating Curve 1, Side 1 of Hyperbola
+            /*********************************************************************************/
+
             // Calculating x and y of an object based off angle and radius of the Hyperbola
             // x = a*sec(angle) + xoffset = a*(1/cos(angle)) + xoffset
             // y = b*tan(angle) + yoffset
             // NOTE: Might have to be flipped like for the CircleT code, still unsure exactly why
             //x = xradius * (1 / Mathf.Cos(Mathf.Deg2Rad * angle)) * + xoffset;
             //y = yradius * Mathf.Tan(Mathf.Deg2Rad * angle) + yoffset;
-            
+
             // OR...
             // x = acosh(t), where cosh(t) = (1+(e)^-2t) / (2*(e)^(-t))
             // y = bsinh(t), where sinh(t) = (1-(e)^-2t) / (2*(e)^(-t))
@@ -94,7 +98,7 @@ public class HyperbolaT : MonoBehaviour {
             // Placing cube..?
             cube.Insert(i, tempCube);
 
-
+            // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
             y = y * (-1);
@@ -125,6 +129,7 @@ public class HyperbolaT : MonoBehaviour {
             y = y * (-1);
 
             /*********************************************************************************/
+            // Calculating Curve 2, Side 1 of Hyperbola
             /*********************************************************************************/
 
             // Calculating x and y of an object based off angle and radius of the Hyperbola
@@ -165,7 +170,7 @@ public class HyperbolaT : MonoBehaviour {
             // Placing cube..?
             cube.Insert(i, tempCube);
 
-
+            // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
             y = y * (-1);
@@ -196,7 +201,6 @@ public class HyperbolaT : MonoBehaviour {
             y = y * (-1);
 
             /*********************************************************************************/
-
 
             t = (3 * (t + 1)) / 4;
 
