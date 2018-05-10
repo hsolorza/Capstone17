@@ -35,7 +35,7 @@ public class save : MonoBehaviour {
 
     }
 
-    void Save_Objects() {
+    public void Save_Objects() {
 
         string s = ""; // \n
         //string path = "Assets/Resources/save_output.txt";
@@ -80,7 +80,7 @@ public class save : MonoBehaviour {
 
     }
 
-    void Load_Objects() {
+    public void Load_Objects() {
 
         // Creates list of GameObjects to spawn back into a game scene
         //public List<GameObject> spawn_list;
