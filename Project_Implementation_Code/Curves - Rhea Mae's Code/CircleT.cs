@@ -19,6 +19,8 @@ public class CircleT : MonoBehaviour {
     public List<GameObject> cube;
     // Some Variable
     private LineRenderer line;
+    // User's GameObject/object
+    public GameObject prefab;
 
     // Use this for initialization
     void Start () {
@@ -46,7 +48,8 @@ public class CircleT : MonoBehaviour {
         // Create a new list for objects
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
-        GameObject tempCube;
+        //GameObject tempCube;
+        GameObject prefab;
         // Physical variables to use to define each object along the circle
         float x = 0f;
         float y = 0f;
@@ -67,7 +70,8 @@ public class CircleT : MonoBehaviour {
             Debug.Log(line.GetPosition(i).x);
 
             // Creating a cube as the GameObject being used
-            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            tempCube = prefab;
             /*tempCube.AddComponent<Rigidbody>();*/
 
             // Placing object at calculated position
