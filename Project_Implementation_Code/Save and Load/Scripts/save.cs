@@ -5,11 +5,6 @@
  * Save and load implementation for project
  ***********************************************/
 
- // NOTE: All of the Debug.Log() statements print out twice
- // I am unsure why...
- // It actually does everything twice, like even spawn objects back into the scene
- // We'll figure this out later
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,48 +17,35 @@ using UnityEditor;
 public class save : MonoBehaviour {
 
     // Creates a GameObject called blockList
-    // Which the GameObject is what this script in attached to in Unity
+    // Which the GameObject is what this script is attached to in Unity
     public GameObject blockList;
-
-    // Creates list of GameObjects to spawn back into a game scene
-    public List<GameObject> spawn_list;
 
     //public GameObject loadedList;
 
     // Use this for initialization
     void Start() {
 
+        //ArrayList children_list = new ArrayList();
+        //int identification;
+
+        //loadedList = GameObject.Find("[Parent GameObject/Container]");
+
+        //Save_Objects();
+        //Load_Objects();
+
+    }
+
+    void Save_Objects() {
+
         string s = ""; // \n
-        string textIn = "";
-        string path = "Assets/Resources/test.txt";
+        //string path = "Assets/Resources/save_output.txt";
+        string path = "Assets/Resources/save_and_load.txt";
 
         string p1, p2, p3;
         string sc1, sc2, sc3;
         string r1, r2, r3;
         string type;
 
-        string[] object_list;
-        ArrayList character_list = new ArrayList();
-
-        int count;
-        int spawn_index = 0;
-        GameObject tempObject;
-        spawn_list = new List<GameObject>();
-
-        float po1, po2, po3;
-        float sca1, sca2, sca3;
-        float ro1, ro2, ro3;
-
-        //loadedList = GameObject.Find("[Parent GameObject/Container]");
-
-        Save_Objects();
-
-        Load_Objects();
-
-    }
-
-    void Save_Objects()
-    {
         // Looops through all of the GameObjects in the list of blocks
         // Finds and Stores each GameObject's position, scaling, rotation, and type
         // Ignores the saving of the parent game object, only considers the children being created
@@ -95,13 +77,36 @@ public class save : MonoBehaviour {
 
         // Writes string in a stated file
         System.IO.File.WriteAllText(path, s);
+
     }
 
-    void Load_Objects()
-    {
+    void Load_Objects() {
+
+        // Creates list of GameObjects to spawn back into a game scene
+        //public List<GameObject> spawn_list;
+        List<GameObject> spawn_list;
+
+        string textIn = "";
+        //string path2 = "Assets/Resources/load_input.txt";
+        string path2 = "Assets/Resources/save_and_load.txt";
+
+        string[] object_list;
+        ArrayList character_list = new ArrayList();
+
+        int count;
+        int spawn_index = 0;
+
+        float po1, po2, po3;
+        float sca1, sca2, sca3;
+        float ro1, ro2, ro3;
+
+        GameObject tempObject;
+        spawn_list = new List<GameObject>();
+
         // Reads the string in the stated file
         // Store string into textIn variable
-        textIn = System.IO.File.ReadAllText(path);
+        //textIn = System.IO.File.ReadAllText(path);
+        textIn = System.IO.File.ReadAllText(path2);
 
         // Prints out contents as a string in the file the string was store into
         //Debug.Log(textIn); 
@@ -133,7 +138,6 @@ public class save : MonoBehaviour {
                 character_list.Add(item);
                 //Debug.Log(item);
             }
-
         }
 
         // Create/Spawn a GameObject(s) based of the componenets in the Arraylist (character_list)
