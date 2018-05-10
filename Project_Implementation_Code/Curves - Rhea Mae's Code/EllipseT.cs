@@ -12,8 +12,8 @@ public class EllipseT : MonoBehaviour {
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables
-    public float xoffset = 5; // h of equation
-    public float yoffset = 5; // v of equation
+    public float xoffset = 0; // h of equation
+    public float yoffset = 0; // v of equation
     public float zoffset = 0;
     public float shrink = 1;
     // Radius of the Ellipse
@@ -27,8 +27,13 @@ public class EllipseT : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
+
         // Calculating number of spaces an object will be placed at on Ellipse
-        
+
         // segments = (360) / (asin(objectWidth/radius)) * 180/3.1415 
         //segments = (int)(360 / (Mathf.Asin(objectWidth / ((xradius + yradius) / 2)) * (180.0 / 3.1415)));
 
@@ -55,8 +60,8 @@ public class EllipseT : MonoBehaviour {
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the Ellipse
-        float x; // x of equation
-        float y; // y of equation
+        float x = 0f; // x of equation
+        float y = 0f; // y of equation
         float z = 0f;
         // Initial angle for the object
         float angle = 20f;
@@ -71,6 +76,12 @@ public class EllipseT : MonoBehaviour {
             x = xradius * Mathf.Cos(Mathf.Deg2Rad * angle) + xoffset;
             y = yradius * Mathf.Sin(Mathf.Deg2Rad * angle) + yoffset;
 
+            // OR...
+            // Solving for y in respects to x
+            // y = sqrt((1 - (((x-h)^2) / a^2)) * b^2) + k
+            //x = x + objectWidth;
+            //y = Mathf.Sqrt((1 - ((Mathf.Pow((x - xoffset), 2)) / Mathf.Pow(xradius, 2))) / Mathf.Pow(yradius, 2)) + yoffset;
+
             // Setting position calculated
             line.SetPosition(i, new Vector3(x, y, z));
             // Printing out x position of object
@@ -84,11 +95,11 @@ public class EllipseT : MonoBehaviour {
             tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Ellipse
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
-            Debug.Log("Angle:" + xAngle);
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //Debug.Log("Angle:" + xAngle);
 
             // Rotating object based off calculated angle from earlier
-            tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing cube..?
             cube.Insert(i, tempCube);

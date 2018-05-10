@@ -9,10 +9,9 @@ public class CircleT : MonoBehaviour {
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables
-    public float xoffset = 5;
-    public float yoffset = 5;
+    public float xoffset = 0;
+    public float yoffset = 0;
     public float zoffset = 0;
-    public float shrink = 1;
     // Radius of the Circle
     public float xradius;
     public float yradius;
@@ -23,6 +22,11 @@ public class CircleT : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
 
         // Calculating number of spaces an object will be placed at on circle
         segments = (int)(360 / (Mathf.Asin(objectWidth / (xradius)) * (180.0 / 3.1415)));

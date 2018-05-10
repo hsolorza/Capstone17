@@ -13,10 +13,9 @@ public class ParabolaT : MonoBehaviour {
     public float objectWidth = 1;
     public float objectHeight = 1;
     // User Input Variables
-    public float xoffset = 5; // h or x0 of equation
-    public float yoffset = 5; // v or y0 of equation
+    public float xoffset = 0; // h or x0 of equation
+    public float yoffset = 0; // v or y0 of equation
     public float zoffset = 0;
-    public float shrink = 1;
     // x-coefficient of the Parabola
     public float a; // a or p of equation
     // List of Objects
@@ -26,6 +25,11 @@ public class ParabolaT : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
 
         // Calculating number of spaces an object will be placed at on Parabola
         // segments = (360) / (asin(objectWidth/radius)) * 180/3.1415 

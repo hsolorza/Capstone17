@@ -12,10 +12,9 @@ public class HyperbolaT : MonoBehaviour {
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables
-    public float xoffset = 5; // h of equation
-    public float yoffset = 5; // v or k of equation
+    public float xoffset = 0; // h of equation
+    public float yoffset = 0; // v or k of equation
     public float zoffset = 0;
-    public float shrink = 1;
     // Asymptotes of the Hyperbola
     public float xradius; // a of equation
     public float yradius; // b of equation
@@ -26,6 +25,11 @@ public class HyperbolaT : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
 
         // Calculating number of spaces an object will be placed at on Hyperbola
         // segments = (360) / (asin(objectWidth/radius)) * 180/3.1415 
