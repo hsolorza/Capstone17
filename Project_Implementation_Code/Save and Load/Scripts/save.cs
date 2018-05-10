@@ -56,10 +56,19 @@ public class save : MonoBehaviour {
 
         //loadedList = GameObject.Find("[Parent GameObject/Container]");
 
+        Save_Objects();
+
+        Load_Objects();
+
+    }
+
+    void Save_Objects()
+    {
         // Looops through all of the GameObjects in the list of blocks
         // Finds and Stores each GameObject's position, scaling, rotation, and type
         // Ignores the saving of the parent game object, only considers the children being created
-        foreach (Transform myChild in blockList.GetComponentsInChildren<Transform>()) {
+        foreach (Transform myChild in blockList.GetComponentsInChildren<Transform>())
+        {
             //Debug.Log(myChild.name);
             if (myChild.name != blockList.name)
             {
@@ -86,7 +95,10 @@ public class save : MonoBehaviour {
 
         // Writes string in a stated file
         System.IO.File.WriteAllText(path, s);
+    }
 
+    void Load_Objects()
+    {
         // Reads the string in the stated file
         // Store string into textIn variable
         textIn = System.IO.File.ReadAllText(path);
@@ -99,7 +111,8 @@ public class save : MonoBehaviour {
         object_list = textIn.Split('\n');
         //Debug.Log(object_list);
 
-        foreach (string gameobj in object_list) {
+        foreach (string gameobj in object_list)
+        {
             string obj;
 
             // Ignoring the first and last character on each line (the opening and closing parantheses (( and )))
@@ -115,10 +128,12 @@ public class save : MonoBehaviour {
             //Debug.Log(item_list);
 
             // Inputs each component in an ongoing Arraylist called character_list
-            foreach (string item in item_list) {
+            foreach (string item in item_list)
+            {
                 character_list.Add(item);
                 //Debug.Log(item);
             }
+
         }
 
         // Create/Spawn a GameObject(s) based of the componenets in the Arraylist (character_list)
@@ -141,12 +156,14 @@ public class save : MonoBehaviour {
 
         count = character_list.Count;
 
-        for (int i = 0; i < count - 1; i++) {
+        for (int i = 0; i < count - 1; i++)
+        {
             // i += 9; at the end every time an object is spawned
 
             string tempType = Convert.ToString(character_list[i + 9]);
-            
-            if (tempType == "T") {
+
+            if (tempType == "T")
+            {
                 po1 = Convert.ToSingle(character_list[i]);
                 po2 = Convert.ToSingle(character_list[i + 1]);
                 po3 = Convert.ToSingle(character_list[i + 2]);
@@ -174,7 +191,8 @@ public class save : MonoBehaviour {
                 i += 9;
             }
             */
-            else {
+            else
+            {
                 Debug.Log("Unable to create a GameObject.");
                 i += 9;
             }
