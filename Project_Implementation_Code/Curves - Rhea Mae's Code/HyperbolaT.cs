@@ -16,8 +16,8 @@ public class HyperbolaT : MonoBehaviour {
     public float yoffset = 0; // v or k of equation
     public float zoffset = 0;
     // Asymptotes of the Hyperbola
-    public float xradius; // a of equation
-    public float yradius; // b of equation
+    public float xradius = 1; // a of equation
+    public float yradius = 2; // b of equation
     // List of Objects
     public List<GameObject> cube;
     // Some Variable
@@ -103,7 +103,7 @@ public class HyperbolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Calculating Curve 1, Side 2 of Hyperbola
@@ -131,7 +131,7 @@ public class HyperbolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             y = y * (-1);
@@ -179,7 +179,7 @@ public class HyperbolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Calculating Curve 2, Side 2 of Hyperbola
@@ -207,7 +207,7 @@ public class HyperbolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             y = y * (-1);

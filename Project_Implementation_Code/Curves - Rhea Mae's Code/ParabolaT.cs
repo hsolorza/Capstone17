@@ -17,7 +17,7 @@ public class ParabolaT : MonoBehaviour {
     public float yoffset = 0; // v or y0 of equation
     public float zoffset = 0;
     // x-coefficient of the Parabola
-    public float a; // a or p of equation
+    public float a = 1; // a or p of equation
     // List of Objects
     public List<GameObject> cube;
     // Some Variable
@@ -50,8 +50,8 @@ public class ParabolaT : MonoBehaviour {
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the Parabola
-        float x = 0; // x of equation
-        float y = 0; // y of equation
+        float x = 0f; // x of equation
+        float y = 0f; // y of equation
         float z = 0f;
         // Starting angle for the object
         float angle = 20f;
@@ -100,7 +100,7 @@ public class ParabolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Graphing the other side of the parabola
@@ -135,7 +135,7 @@ public class ParabolaT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             //x = x * (-1);

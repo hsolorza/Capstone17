@@ -9,14 +9,14 @@ public class BezierT : MonoBehaviour {
     // Width of the Object
     public float objectWidth = 1;
     // User Input Variables, Points of Bezier Curve
-    public float x1 = 0; // x1 of curve
-    public float y1 = 0; // y1 of curve
-    public float x2 = 0; // x2 of curve
-    public float y2 = 0; // y2 of curve
-    public float x3 = 0; // x3 of curve
-    public float y3 = 0; // y3 of curve
-    public float x4 = 0; // x4 of curve
-    public float y4 = 0; // y4 of curve
+    public float x1 = -5; // x1 of curve
+    public float y1 = -1; // y1 of curve
+    public float x2 = -1; // x2 of curve
+    public float y2 = 5; // y2 of curve
+    public float x3 = 1; // x3 of curve
+    public float y3 = -5; // y3 of curve
+    public float x4 = 5; // x4 of curve
+    public float y4 = 1; // y4 of curve
     // List of Objects
     public List<GameObject> cube;
     // Some Variable
@@ -45,8 +45,8 @@ public class BezierT : MonoBehaviour {
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the Bezier Curve
-        float x; // x of equation
-        float y; // y of equation
+        float x = 0f; // x of equation
+        float y = 0f; // y of equation
         float z = 0f;
         // Initial t for the object
         float t = 0f;
@@ -82,7 +82,7 @@ public class BezierT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Calculating next angle based off an additional segment calculated from earlier

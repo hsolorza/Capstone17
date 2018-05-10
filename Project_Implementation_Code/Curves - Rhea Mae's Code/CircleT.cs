@@ -13,8 +13,8 @@ public class CircleT : MonoBehaviour {
     public float yoffset = 0;
     public float zoffset = 0;
     // Radius of the Circle
-    public float xradius;
-    public float yradius;
+    public float xradius = 4;
+    public float yradius = 4;
     // List of Objects
     public List<GameObject> cube;
     // Some Variable
@@ -48,8 +48,8 @@ public class CircleT : MonoBehaviour {
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the circle
-        float x;
-        float y;
+        float x = 0f;
+        float y = 0f;
         float z = 0f;
         // Initial angle for the object
         float angle = 20f;
@@ -79,7 +79,7 @@ public class CircleT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Calculating next angle based off an additional segment calculated from earlier

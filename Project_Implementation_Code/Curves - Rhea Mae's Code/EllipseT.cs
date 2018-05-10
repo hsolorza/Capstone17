@@ -15,10 +15,9 @@ public class EllipseT : MonoBehaviour {
     public float xoffset = 0; // h of equation
     public float yoffset = 0; // v of equation
     public float zoffset = 0;
-    public float shrink = 1;
     // Radius of the Ellipse
-    public float xradius; // a of equation
-    public float yradius; // b of equation
+    public float xradius = 4; // a of equation
+    public float yradius = 2; // b of equation
     // List of Objects
     public List<GameObject> cube;
     // Some Variable
@@ -101,7 +100,7 @@ public class EllipseT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube..?
+            // Placing cube
             cube.Insert(i, tempCube);
 
             // Calculating next angle based off an additional segment calculated from earlier
