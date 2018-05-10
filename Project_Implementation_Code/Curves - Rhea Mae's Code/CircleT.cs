@@ -48,8 +48,8 @@ public class CircleT : MonoBehaviour {
         // Create a new list for objects
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
-        //GameObject tempCube;
-        GameObject prefab;
+        GameObject tempCube;
+        //GameObject prefab;
         // Physical variables to use to define each object along the circle
         float x = 0f;
         float y = 0f;
