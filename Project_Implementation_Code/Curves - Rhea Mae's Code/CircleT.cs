@@ -77,7 +77,7 @@ public class CircleT : MonoBehaviour {
             float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
-            tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing cube
             cube.Insert(i, tempCube);
