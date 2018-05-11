@@ -27,7 +27,7 @@ public class BezierC : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        /** ONLY UNCOMMENT WHEN TESTING
         // Calculating number of spaces an object will be placed at on Bezier Curve
         // segments = (360) / (asin(objectWidth/radius)) * 180/3.1415 
         Debug.Log("Segments: " + segments);
@@ -42,9 +42,11 @@ public class BezierC : MonoBehaviour {
         //CreatePoints_Sphere(); // Main object used is a sphere
         //CreatePoints_Capsule(); // Main object used is a capsule
         //CreatePoints_Cylinder(); // Main object used is a cylinder
+        **/
     }
 
-    void CreatePoints() {
+    //void CreatePoints() {
+    public void CreatePoints() {
 
         // Create a new list for objects
         cube = new List<GameObject>(segments);
@@ -78,8 +80,8 @@ public class BezierC : MonoBehaviour {
             tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             /*tempCube.AddComponent<Rigidbody>();*/
 
-            // Placing object at calculated position
-            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+        // Placing object at calculated position
+        tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Bezier Curve
             //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
@@ -98,7 +100,8 @@ public class BezierC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Sphere() {
+    //void CreatePoints_Sphere() {
+    public void CreatePoints_Sphere() {
 
         // Create a new list for objects
         sphere = new List<GameObject>(segments);
@@ -152,7 +155,8 @@ public class BezierC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Capsule () {
+    //void CreatePoints_Capsule () {
+    public void CreatePoints_Capsule () {
 
         // Create a new list for objects
         capsule = new List<GameObject>(segments);
@@ -206,7 +210,8 @@ public class BezierC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Cylinder() {
+    //void CreatePoints_Cylinder() {
+    public void CreatePoints_Cylinder() {
 
         // Create a new list for objects
         cylinder = new List<GameObject>(segments);

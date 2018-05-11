@@ -28,7 +28,7 @@ public class ParabolaC : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        /** ONLY UNCOMMENT WHEN TESTING
         // Having object spawn in front of user
         xoffset = Camera.main.transform.position.x;
         yoffset = Camera.main.transform.position.y;
@@ -47,9 +47,11 @@ public class ParabolaC : MonoBehaviour {
         //CreatePoints_Sphere(); // Main object used is a sphere
         //CreatePoints_Capsule(); // Main object used is a capsule
         //CreatePoints_Cylinder(); // Main object used is a cylinder
+        **/
     }
 
-    void CreatePoints() {
+    //void CreatePoints() {
+    public void CreatePoints() {
 
         // Create a new list for objects
         cube = new List<GameObject>(segments);
@@ -93,8 +95,8 @@ public class ParabolaC : MonoBehaviour {
             tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             /*tempCube.AddComponent<Rigidbody>();*/
 
-            // Placing object at calculated position
-            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+        // Placing object at calculated position
+        tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Parabola
             // angle = acos((x-xoffset)/(m))
@@ -154,7 +156,8 @@ public class ParabolaC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Sphere() {
+    //void CreatePoints_Sphere() {
+    public void CreatePoints_Sphere() {
 
         // Create a new list for objects
         sphere = new List<GameObject>(segments);
@@ -259,7 +262,8 @@ public class ParabolaC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Capsule() {
+    //void CreatePoints_Capsule() {
+    public void CreatePoints_Capsule() {
 
         // Create a new list for objects
         capsule = new List<GameObject>(segments);
@@ -364,7 +368,8 @@ public class ParabolaC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Cylinder() {
+    //void CreatePoints_Cylinder() {
+    public void CreatePoints_Cylinder() {
 
         // Create a new list for objects
         cylinder = new List<GameObject>(segments);

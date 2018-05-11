@@ -25,7 +25,7 @@ public class CircleC : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        /** ONLY UNCOMMENT WHEN TESTING
         // Having object spawn in front of user
         xoffset = Camera.main.transform.position.x;
         yoffset = Camera.main.transform.position.y;
@@ -45,9 +45,24 @@ public class CircleC : MonoBehaviour {
         //CreatePoints_Sphere(); // Main object used is a sphere
         //CreatePoints_Capsule(); // Main object used is a capsule
         //CreatePoints_Cylinder(); // Main object used is a cylinder
+        **/
     }
 
-    void CreatePoints() {
+    //void CreatePoints() {
+    public void CreatePoints() {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
+
+        // Calculating number of spaces an object will be placed at on circle
+        segments = (int)(360 / (Mathf.Asin(objectWidth / (xradius)) * (180.0 / 3.1415)));
+        Debug.Log("Segments: " + segments);
+
+        line = gameObject.GetComponent<LineRenderer>();
+        line.positionCount = (segments + 1);
+        line.useWorldSpace = false;
 
         // Create a new list for objects
         cube = new List<GameObject>(segments);
@@ -80,10 +95,10 @@ public class CircleC : MonoBehaviour {
             tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the circle
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
-            tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing cube
             cube.Insert(i, tempCube);
@@ -94,7 +109,21 @@ public class CircleC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Sphere() {
+    //void CreatePoints_Sphere() {
+    public void CreatePoints_Sphere() {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
+
+        // Calculating number of spaces an object will be placed at on circle
+        segments = (int)(360 / (Mathf.Asin(objectWidth / (xradius)) * (180.0 / 3.1415)));
+        Debug.Log("Segments: " + segments);
+
+        line = gameObject.GetComponent<LineRenderer>();
+        line.positionCount = (segments + 1);
+        line.useWorldSpace = false;
 
         // Create a new list for objects
         sphere = new List<GameObject>(segments);
@@ -127,10 +156,10 @@ public class CircleC : MonoBehaviour {
             tempSphere.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the circle
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
-            tempSphere.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempSphere.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing sphere
             sphere.Insert(i, tempSphere);
@@ -141,7 +170,21 @@ public class CircleC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Capsule() {
+    //void CreatePoints_Capsule() {
+    public void CreatePoints_Capsule() {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
+
+        // Calculating number of spaces an object will be placed at on circle
+        segments = (int)(360 / (Mathf.Asin(objectWidth / (xradius)) * (180.0 / 3.1415)));
+        Debug.Log("Segments: " + segments);
+
+        line = gameObject.GetComponent<LineRenderer>();
+        line.positionCount = (segments + 1);
+        line.useWorldSpace = false;
 
         // Create a new list for objects
         capsule = new List<GameObject>(segments);
@@ -174,10 +217,10 @@ public class CircleC : MonoBehaviour {
             tempCapsule.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the circle
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
-            tempCapsule.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCapsule.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing capsule
             capsule.Insert(i, tempCapsule);
@@ -188,7 +231,21 @@ public class CircleC : MonoBehaviour {
 
     }
 
-    void CreatePoints_Cylinder() {
+    //void CreatePoints_Cylinder() {
+    public void CreatePoints_Cylinder() {
+
+        // Having object spawn in front of user
+        xoffset = Camera.main.transform.position.x;
+        yoffset = Camera.main.transform.position.y;
+        zoffset = Camera.main.transform.position.z + 6;
+
+        // Calculating number of spaces an object will be placed at on circle
+        segments = (int)(360 / (Mathf.Asin(objectWidth / (xradius)) * (180.0 / 3.1415)));
+        Debug.Log("Segments: " + segments);
+
+        line = gameObject.GetComponent<LineRenderer>();
+        line.positionCount = (segments + 1);
+        line.useWorldSpace = false;
 
         // Create a new list for objects
         cylinder = new List<GameObject>(segments);
@@ -221,10 +278,10 @@ public class CircleC : MonoBehaviour {
             tempCylinder.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the circle
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
-            tempCylinder.transform.localEulerAngles = new Vector3(0, 0, xAngle);
+            //tempCylinder.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);

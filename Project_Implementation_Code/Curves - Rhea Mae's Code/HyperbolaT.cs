@@ -98,7 +98,7 @@ public class HyperbolaT : MonoBehaviour {
             // Calculating angle of the object of the Hyperbola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
@@ -126,7 +126,7 @@ public class HyperbolaT : MonoBehaviour {
             // Calculating angle of the object of the Hyperbola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
@@ -174,7 +174,7 @@ public class HyperbolaT : MonoBehaviour {
             // Calculating angle of the object of the Hyperbola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
@@ -202,7 +202,7 @@ public class HyperbolaT : MonoBehaviour {
             // Calculating angle of the object of the Hyperbola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);

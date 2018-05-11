@@ -20,7 +20,7 @@ public class CircleT : MonoBehaviour {
     // Some Variable
     private LineRenderer line;
     // User's GameObject/object
-    public GameObject prefab;
+   // public GameObject prefab;
 
     // Use this for initialization
     void Start () {
@@ -49,7 +49,6 @@ public class CircleT : MonoBehaviour {
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
         GameObject tempCube;
-        //GameObject prefab;
         // Physical variables to use to define each object along the circle
         float x = 0f;
         float y = 0f;
@@ -70,15 +69,15 @@ public class CircleT : MonoBehaviour {
             Debug.Log(line.GetPosition(i).x);
 
             // Creating a cube as the GameObject being used
-            //tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            tempCube = prefab;
+            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //tempCube = prefab;
             /*tempCube.AddComponent<Rigidbody>();*/
 
             // Placing object at calculated position
             tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the circle
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
