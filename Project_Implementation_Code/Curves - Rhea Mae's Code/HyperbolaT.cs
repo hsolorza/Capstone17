@@ -22,6 +22,8 @@ public class HyperbolaT : MonoBehaviour {
     public List<GameObject> cube;
     // Some Variable
     private LineRenderer line;
+    // User's GameObjects/objects
+    public GameObject parent_object;
 
     // Use this for initialization
     void Start () {
@@ -106,6 +108,9 @@ public class HyperbolaT : MonoBehaviour {
             // Placing cube
             cube.Insert(i, tempCube);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -133,6 +138,9 @@ public class HyperbolaT : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -182,6 +190,9 @@ public class HyperbolaT : MonoBehaviour {
             // Placing cube
             cube.Insert(i, tempCube);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -209,6 +220,9 @@ public class HyperbolaT : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 

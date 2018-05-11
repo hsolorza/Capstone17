@@ -22,6 +22,8 @@ public class ParabolaT : MonoBehaviour {
     public List<GameObject> cube;
     // Some Variable
     private LineRenderer line;
+    // User's GameObjects/objects
+    public GameObject parent_object;
 
     // Use this for initialization
     void Start () {
@@ -103,6 +105,9 @@ public class ParabolaT : MonoBehaviour {
             // Placing cube
             cube.Insert(i, tempCube);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
+
             // Graphing the other side of the parabola
             /*********************************************************************************/
 
@@ -137,6 +142,9 @@ public class ParabolaT : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             //x = x * (-1);
 

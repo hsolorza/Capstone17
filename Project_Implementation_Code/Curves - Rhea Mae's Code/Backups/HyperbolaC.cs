@@ -25,6 +25,8 @@ public class HyperbolaC : MonoBehaviour {
     public List<GameObject> cylinder;
     // Some Variable
     private LineRenderer line;
+    // User's GameObjects/objects
+    public GameObject parent_object;
 
     // Use this for initialization
     void Start () {
@@ -114,6 +116,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing cube
             cube.Insert(i, tempCube);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -141,6 +146,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -190,6 +198,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing cube
             cube.Insert(i, tempCube);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -217,6 +228,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -296,6 +310,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing sphere
             sphere.Insert(i, tempSphere);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -323,6 +340,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing sphere
             sphere.Insert(i, tempSphere);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -372,6 +392,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing sphere
             sphere.Insert(i, tempSphere);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -399,6 +422,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing sphere
             sphere.Insert(i, tempSphere);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -478,6 +504,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing capsule
             capsule.Insert(i, tempCapsule);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -505,6 +534,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing capsule
             capsule.Insert(i, tempCapsule);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -554,6 +586,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing capsule
             capsule.Insert(i, tempCapsule);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -581,6 +616,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing capsule
             capsule.Insert(i, tempCapsule);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -660,6 +698,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -687,6 +728,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 
@@ -736,6 +780,9 @@ public class HyperbolaC : MonoBehaviour {
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
+
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
 
@@ -763,6 +810,9 @@ public class HyperbolaC : MonoBehaviour {
 
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
 
             y = y * (-1);
 

@@ -22,6 +22,8 @@ public class CircleC : MonoBehaviour {
     public List<GameObject> cylinder;
     // Some Variable
     private LineRenderer line;
+    // User's GameObjects/objects
+    public GameObject parent_object;
 
     // Use this for initialization
     void Start () {
@@ -66,6 +68,8 @@ public class CircleC : MonoBehaviour {
 
         // Create a new list for objects
         cube = new List<GameObject>(segments);
+        // Length of the list created above
+        int list_length = 0;
         // Creating a GameObject for the object being used
         GameObject tempCube;
         // Physical variables to use to define each object along the circle
@@ -107,6 +111,18 @@ public class CircleC : MonoBehaviour {
             angle += (360f / segments);
         }
 
+        // Counts the number of GameObjects in the list
+        list_length = cube.Count;
+
+        // Makes all of the elements in the list above children of the user's created GameObject previously
+        for (int i = 0; i < list_length; i++)
+        {
+
+            //cube[i].transform.SetParent(parent_object, false);
+            cube[i].transform.parent = parent_object.transform;
+
+        }
+
     }
 
     //void CreatePoints_Sphere() {
@@ -127,6 +143,8 @@ public class CircleC : MonoBehaviour {
 
         // Create a new list for objects
         sphere = new List<GameObject>(segments);
+        // Length of the list created above
+        int list_length = 0;
         // Creating a GameObject for the object being used
         GameObject tempSphere;
         // Physical variables to use to define each object along the circle
@@ -168,6 +186,18 @@ public class CircleC : MonoBehaviour {
             angle += (360f / segments);
         }
 
+        // Counts the number of GameObjects in the list
+        list_length = sphere.Count;
+
+        // Makes all of the elements in the list above children of the user's created GameObject previously
+        for (int i = 0; i < list_length; i++)
+        {
+
+            //sphere[i].transform.SetParent(parent_object, false);
+            sphere[i].transform.parent = parent_object.transform;
+
+        }
+
     }
 
     //void CreatePoints_Capsule() {
@@ -188,6 +218,8 @@ public class CircleC : MonoBehaviour {
 
         // Create a new list for objects
         capsule = new List<GameObject>(segments);
+        // Length of the list created above
+        int list_length = 0;
         // Creating a GameObject for the object being used
         GameObject tempCapsule;
         // Physical variables to use to define each object along the circle
@@ -229,6 +261,18 @@ public class CircleC : MonoBehaviour {
             angle += (360f / segments);
         }
 
+        // Counts the number of GameObjects in the list
+        list_length = capsule.Count;
+
+        // Makes all of the elements in the list above children of the user's created GameObject previously
+        for (int i = 0; i < list_length; i++)
+        {
+
+            //capsule[i].transform.SetParent(parent_object, false);
+            capsule[i].transform.parent = parent_object.transform;
+
+        }
+
     }
 
     //void CreatePoints_Cylinder() {
@@ -249,6 +293,8 @@ public class CircleC : MonoBehaviour {
 
         // Create a new list for objects
         cylinder = new List<GameObject>(segments);
+        // Length of the list created above
+        int list_length = 0;
         // Creating a GameObject for the object being used
         GameObject tempCylinder;
         // Physical variables to use to define each object along the circle
@@ -289,6 +335,18 @@ public class CircleC : MonoBehaviour {
             // Calculating next angle based off an additional segment calculated from earlier
             angle += (360f / segments);
         }
+
+        // Counts the number of GameObjects in the list
+        list_length = cylinder.Count;
+
+        // Makes all of the elements in the list above children of the user's created GameObject previously
+        for (int i = 0; i < list_length; i++) {
+
+            //cylinder[i].transform.SetParent(parent_object, false);
+            cylinder[i].transform.parent = parent_object.transform;
+
+        }
+
     }
 
     // Update is called once per frame

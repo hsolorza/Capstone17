@@ -25,6 +25,8 @@ public class ParabolaC : MonoBehaviour {
     public List<GameObject> cylinder;
     // Some Variable
     private LineRenderer line;
+    // User's GameObjects/objects
+    public GameObject parent_object;
 
     // Use this for initialization
     void Start () {
@@ -95,8 +97,8 @@ public class ParabolaC : MonoBehaviour {
             tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             /*tempCube.AddComponent<Rigidbody>();*/
 
-        // Placing object at calculated position
-        tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+            // Placing object at calculated position
+            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Parabola
             // angle = acos((x-xoffset)/(m))
@@ -110,6 +112,9 @@ public class ParabolaC : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             // Graphing the other side of the parabola
             /*********************************************************************************/
@@ -145,6 +150,9 @@ public class ParabolaC : MonoBehaviour {
 
             // Placing cube
             cube.Insert(i, tempCube);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cube[i].transform.parent = parent_object.transform;
 
             //x = x * (-1);
 
@@ -217,6 +225,9 @@ public class ParabolaC : MonoBehaviour {
             // Placing sphere
             sphere.Insert(i, tempSphere);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
+
             // Graphing the other side of the parabola
             /*********************************************************************************/
 
@@ -251,6 +262,9 @@ public class ParabolaC : MonoBehaviour {
 
             // Placing sphere
             sphere.Insert(i, tempSphere);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            sphere[i].transform.parent = parent_object.transform;
 
             //x = x * (-1);
 
@@ -323,6 +337,9 @@ public class ParabolaC : MonoBehaviour {
             // Placing capsule
             capsule.Insert(i, tempCapsule);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
+
             // Graphing the other side of the parabola
             /*********************************************************************************/
 
@@ -357,6 +374,9 @@ public class ParabolaC : MonoBehaviour {
 
             // Placing capsule
             capsule.Insert(i, tempCapsule);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            capsule[i].transform.parent = parent_object.transform;
 
             //x = x * (-1);
 
@@ -429,6 +449,9 @@ public class ParabolaC : MonoBehaviour {
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
 
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
+
             // Graphing the other side of the parabola
             /*********************************************************************************/
 
@@ -463,6 +486,9 @@ public class ParabolaC : MonoBehaviour {
 
             // Placing cylinder
             cylinder.Insert(i, tempCylinder);
+
+            // Makes the element/GameObject above a child of the user's created GameObject previously
+            cylinder[i].transform.parent = parent_object.transform;
 
             //x = x * (-1);
 
