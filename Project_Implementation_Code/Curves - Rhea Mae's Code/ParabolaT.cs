@@ -24,6 +24,8 @@ public class ParabolaT : MonoBehaviour {
     private LineRenderer line;
     // User's GameObjects/objects
     public GameObject parent_object;
+    //public GameObject;
+    public GameObject main_object;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +52,7 @@ public class ParabolaT : MonoBehaviour {
         // Create a new list for objects
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
+        GameObject store_object;
         //GameObject tempCube;
         // Physical variables to use to define each object along the Parabola
         float x = 0f; // x of equation
@@ -103,14 +106,15 @@ public class ParabolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             // Graphing the other side of the parabola
             /*********************************************************************************/
@@ -145,14 +149,15 @@ public class ParabolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             //x = x * (-1);
 

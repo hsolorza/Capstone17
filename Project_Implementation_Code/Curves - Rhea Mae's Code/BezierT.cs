@@ -23,6 +23,8 @@ public class BezierT : MonoBehaviour {
     private LineRenderer line;
     // User's GameObjects/objects
     public GameObject parent_object;
+    //public GameObject;
+    public GameObject main_object;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +49,7 @@ public class BezierT : MonoBehaviour {
         // Length of the list created above
         int list_length = 0;
         // Creating a GameObject for the object being used
+        GameObject store_object;
         //GameObject tempCube;
         // Physical variables to use to define each object along the Bezier Curve
         float x = 0f; // x of equation
@@ -87,10 +90,11 @@ public class BezierT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Calculating next angle based off an additional segment calculated from earlier
@@ -106,7 +110,7 @@ public class BezierT : MonoBehaviour {
         {
 
             //cube[i].transform.SetParent(parent_object, false);
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
         }
 

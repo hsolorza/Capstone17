@@ -24,6 +24,8 @@ public class HyperbolaT : MonoBehaviour {
     private LineRenderer line;
     // User's GameObjects/objects
     public GameObject parent_object;
+    //public GameObject;
+    public GameObject main_object;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +52,7 @@ public class HyperbolaT : MonoBehaviour {
         // Create a new list for objects
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
+        GameObject store_object;
         //GameObject tempCube;
         // Physical variables to use to define each object along the Hyperbola
         float x = 0f; // x of equation
@@ -106,14 +109,15 @@ public class HyperbolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             // Calculating Curve 1, Side 2 of Hyperbola
             /*********************************************************************************/
@@ -141,14 +145,15 @@ public class HyperbolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             y = y * (-1);
 
@@ -196,14 +201,15 @@ public class HyperbolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             // Calculating Curve 2, Side 2 of Hyperbola
             /*********************************************************************************/
@@ -231,14 +237,15 @@ public class HyperbolaT : MonoBehaviour {
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
             // Placing the user's object along the curve
-            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            //Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+            store_object = Instantiate(parent_object, new Vector3(x, y, z), Quaternion.identity) as GameObject;
 
             // Inserting object to list
-            cube.Insert(i, parent_object);
+            cube.Insert(i, store_object);
             //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
-            cube[i].transform.parent = parent_object.transform;
+            cube[i].transform.parent = main_object.transform;
 
             y = y * (-1);
 
