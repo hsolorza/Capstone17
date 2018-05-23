@@ -50,7 +50,7 @@ public class ParabolaT : MonoBehaviour {
         // Create a new list for objects
         cube = new List<GameObject>(segments);
         // Creating a GameObject for the object being used
-        GameObject tempCube;
+        //GameObject tempCube;
         // Physical variables to use to define each object along the Parabola
         float x = 0f; // x of equation
         float y = 0f; // y of equation
@@ -86,24 +86,28 @@ public class ParabolaT : MonoBehaviour {
             Debug.Log(line.GetPosition(i).x);
 
             // Creating a cube as the GameObject being used
-            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             /*tempCube.AddComponent<Rigidbody>();*/
 
             // Placing object at calculated position
-            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+            //tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Parabola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
             //float xAngle = Mathf.Tan((line.GetPosition(i).y - yoffset) / (line.GetPosition(i).x - xoffset)) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
-            Debug.Log("Angle:" + xAngle);
+            //Debug.Log("Angle:" + xAngle);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube
-            cube.Insert(i, tempCube);
+            // Placing the user's object along the curve
+            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+
+            // Inserting object to list
+            cube.Insert(i, parent_object);
+            //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
             cube[i].transform.parent = parent_object.transform;
@@ -124,24 +128,28 @@ public class ParabolaT : MonoBehaviour {
             Debug.Log(line.GetPosition(i).x);
 
             // Creating a cube as the GameObject being used
-            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             //tempCube.AddComponent<Rigidbody>();//
 
             // Placing object at calculated position
-            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+            //tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Parabola
             // angle = acos((x-xoffset)/(m))
             // m = -(x-xoffset) / (y-yoffset)
-            xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
+            //xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / (-((line.GetPosition(i).x - xoffset) / (line.GetPosition(i).y - yoffset)))) * (float)(180.0 / 3.1415);
             //float xAngle = Mathf.Tan((line.GetPosition(i).y - yoffset) / (line.GetPosition(i).x - xoffset)) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
-            Debug.Log("Angle:" + xAngle);
+            //Debug.Log("Angle:" + xAngle);
 
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube
-            cube.Insert(i, tempCube);
+            // Placing the user's object along the curve
+            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+
+            // Inserting object to list
+            cube.Insert(i, parent_object);
+            //cube.Insert(i, tempCube);
 
             // Makes the element/GameObject above a child of the user's created GameObject previously
             cube[i].transform.parent = parent_object.transform;

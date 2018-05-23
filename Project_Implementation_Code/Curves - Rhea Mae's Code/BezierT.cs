@@ -47,7 +47,7 @@ public class BezierT : MonoBehaviour {
         // Length of the list created above
         int list_length = 0;
         // Creating a GameObject for the object being used
-        GameObject tempCube;
+        //GameObject tempCube;
         // Physical variables to use to define each object along the Bezier Curve
         float x = 0f; // x of equation
         float y = 0f; // y of equation
@@ -73,11 +73,11 @@ public class BezierT : MonoBehaviour {
             Debug.Log("Y-Position: " + line.GetPosition(i).y);
 
             // Creating a cube as the GameObject being used
-            tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //tempCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             /*tempCube.AddComponent<Rigidbody>();*/
 
             // Placing object at calculated position
-            tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
+            //tempCube.transform.position = new Vector3(line.GetPosition(i).x, line.GetPosition(i).y, line.GetPosition(i).z);
 
             // Calculating angle of the object of the Bezier Curve
             //float xAngle = Mathf.Acos((line.GetPosition(i).x - xoffset) / xradius) * (float)(180.0 / 3.1415) * (line.GetPosition(i).y - xoffset) / Mathf.Abs((line.GetPosition(i).y - xoffset));
@@ -86,8 +86,12 @@ public class BezierT : MonoBehaviour {
             // Rotating object based off calculated angle from earlier
             //tempCube.transform.localEulerAngles = new Vector3(0, 0, xAngle);
 
-            // Placing cube
-            cube.Insert(i, tempCube);
+            // Placing the user's object along the curve
+            Instantiate(parent_object.transform, new Vector3(x, y, z), Quaternion.identity);
+
+            // Inserting object to list
+            cube.Insert(i, parent_object);
+            //cube.Insert(i, tempCube);
 
             // Calculating next angle based off an additional segment calculated from earlier
             //angle += (360f / segments);
