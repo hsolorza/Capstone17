@@ -28,7 +28,7 @@ equations and algorithms to derive the appropriate structure of the design.
 The outcome of this Oregon State University computer science senior capstone project is a virtual reality program 
 that allows the user to utilize generative design to develop complex architectural structure.
 
-<br><br>
+<br>
 Website Link: <a href="https://icreate2017.github.io/">iCreate<a>
 
 <img width="650" alt="capture" src="Images/poster.png">
