@@ -15,6 +15,19 @@
 
 # Overall Project Description and Background
 
+The purpose of this project is to develop a VR application that allows users to create complex 3D objects by 
+seamlessly creating simpler objects and combining them to form intricate structures.
+<br>
+The virtual reality (VR) application will utilize a virtual reality headset with input from the user via a 
+controller recognition software. The VR headset will be used to look around in virtual space while the controllers' 
+recognition software will be used by the user to draw curves. The application will also need to utilize the GPU in 
+a computer to both run the VR application and render 3D objects in the virtual space. Additionally, the 3D modelling 
+will be based on generative design techniques, and the assembly of the complex 3D designs will utilize mathematical 
+equations and algorithms to derive the appropriate structure of the design.
+<br>
+The outcome of this Oregon State University computer science senior capstone project is a virtual reality program 
+that allows the user to utilize generative design to develop complex architectural structure.
+
 <img width="650" alt="capture" src="Images/poster.png">
 <br>
 <img width="650" alt="capture" src="Images/class_diagram.PNG">
