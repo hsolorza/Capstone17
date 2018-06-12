@@ -15,7 +15,7 @@
 
 # Overall Project Description and Background
 
-<img width="600" alt="capture" src="Images/poster.jpg">
+<img width="650" alt="capture" src="Images/poster.png">
   
 # Roman Aqueduct Example:
 
