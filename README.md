@@ -17,9 +17,9 @@
 
 <img width="650" alt="capture" src="Images/poster.png">
 <br>
-<img width="650" alt="capture" src="Images/class_diagram.png">
+<img width="650" alt="capture" src="Images/class_diagram.PNG">
 <br>
-<img width="650" alt="capture" src="Images/state_diagram.png">
+<img width="650" alt="capture" src="Images/state_diagram.PNG">
   
 # Roman Aqueduct Example:
 
