@@ -1,4 +1,4 @@
-# iCreate
+# iCreate - Generative Design in Virtual Reality
 
   This is a virtual reality program designed to create generative designed architecture. 
   iCreate was developed using Unity (https://unity3d.com/) for the HTC Vive with development support by SteamVR. 
