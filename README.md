@@ -15,7 +15,7 @@
 
 # Overall Project Description and Background
 
-<img width="437" alt="capture" src="Capstone17/Engineering Expo 2018/Poster/CS61_Expo_Poster.pdf">
+<img width="437" alt="capture" src="https://github.com/hsolorza/Capstone17/blob/master/Engineering%20Expo%202018/Poster/CS61_Expo_Poster.pdf">
   
 # Roman Aqueduct Example (Started Project):
 
