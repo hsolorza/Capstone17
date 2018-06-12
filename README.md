@@ -13,7 +13,10 @@
   
   edwardrh - Rhea Mae Edwards
 
+# Overall Project Description and Background
 
-# Roman Aqueduct Example:
+<img width="437" alt="capture" src="Capstone17/Engineering Expo 2018/Poster/CS61_Expo_Poster.pdf">
+  
+# Roman Aqueduct Example (Started Project):
 
 <img width="437" alt="capture" src="https://user-images.githubusercontent.com/20174370/31916394-63030d20-b807-11e7-8df9-5a46f349cf43.PNG">
